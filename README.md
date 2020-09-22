@@ -4,6 +4,14 @@ As the code we're running in Galaxy has diverged, we will not be running this re
 
 Arunoda uses the name Kadira for other projects and still owns the trademark on the "Kadira" name. Arunoda requests that public forks should choose a new name.
 
+# Development 1.0.0 Fork: shathaway/kadira-server
+
+This is a fork of *kadira-open/kadira-server" to make the Kadira APM usable on a single localhost.
+The NGINX software is used as a web application proxy server on the localhost.
+
+It is serviced by MongoDb v3.6 and Meteor v1.4.3.2. The code and configurations have been minimally
+upgraded to make the integration operational.
+
 # Kadira APM
 
 This is a set of components you need to run Kadira in your system.
