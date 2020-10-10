@@ -1,7 +1,9 @@
 {
   "name": "kadira-rma",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0-beta",
+  "description": "Kadira APM Realtime Metrics Aggregator",
+  "homepage": "https://github.com/kadira-open/kadira-server",
+  "license": "MIT",
   "scripts": {
     "start": "run-p -l run:**",
     "run:errors-1min": "PROFILE=1min PROVIDER=errors bash start.sh",
@@ -18,7 +20,20 @@
     "run:system-3hour": "PROFILE=3hour PROVIDER=system bash start.sh"
   },
   "dependencies": {
-    "npm-run-all": "^3.1.2",
-    "pick-mongo-primary": "^0.4.1"
-  }
+    "npm-run-all": "~4.1.0",
+    "pick-mongo-primary": "file:../packages/pick-mongo-primary"
+  },
+  "author": "",
+  "contributors": [
+    {
+      "name": "Arunoda Susiripala",
+      "email": "arunoda@kadira.io",
+      "website": "https://github.com/arunoda"
+    },
+    {
+      "name": "Steven J Hathaway",
+      "email": "shathawa@e-z.net",
+      "website": "https://github.com/shathaway"
+    }
+  ]
 }

@@ -1,0 +1,3 @@
+use testapm
+db.mapReduceProfileConfig.updateMany({},{$set:{lastTime: new Date('2020','02','13')}})
+

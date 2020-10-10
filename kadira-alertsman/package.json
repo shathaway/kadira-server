@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "nodemon": "1.x.x",
-    "mocha": "3.x.x",
+    "mocha": "6.x.x",
     "chai": "3.x.x",
     "eslint": "4.x.x",
     "babel-eslint": "7.x.x",
@@ -41,7 +41,7 @@
     "lokka-transport-http-auth": "1.x.x",
     "moment": "2.x.x",
     "mongo-oplog": "2.x.x",
-    "mongodb": "2.x.x",
+    "mongodb": "3.2.x",
     "node-fetch": "1.x.x",
     "nodemailer": "4.x.x",
     "nodemailer-smtp-transport": "2.x.x",

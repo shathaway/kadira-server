@@ -1,10 +1,11 @@
 Package.describe({
-  summary: "State Manager for Kadira UI",
-  name: "local:state-manager"
+  'summary': "State Manager for Kadira UI",
+  'name': "local:state-manager",
+  'version': '1.0.0'
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom("1.1.0.2");
+  api.versionsFrom("1.6.0.1");
   api.use([
     "jsx", 
     "raix:eventemitter", 

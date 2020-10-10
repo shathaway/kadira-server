@@ -1,10 +1,11 @@
 Package.describe({
-  summary: "URL State Manager for Kadira UI",
-  name: "local:url-state-manager"
+  'summary': "URL State Manager for Kadira UI",
+  'name': "local:url-state-manager",
+  'version': '1.0.0'
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom("1.1.0.2");
+  api.versionsFrom("1.6.0.1");
   api.use(["underscore", "tracker"]);
   api.addFiles("lib/url-state-manager.js");
   api.export("UrlStateManager", ["client", "server"]);

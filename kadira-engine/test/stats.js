@@ -4,7 +4,11 @@ var exec = require('child_process').exec;
 var util = require('util');
 var _ = require('underscore');
 
-var clean = mongo.cleanCollections([ 'prodStats', 'rawMethodsMetrics', 'methodsMetrics', 'mapReduceProfileConfig', 'rawPubMetrics', 'pubMetrics', 'systemMetrics', 'rawSystemMetrics', 'rawErrorMetrics', 'errorMetrics' ]);
+// DO NOt INCLUDE mapReduceProfileConfig IN THIS SET OF COLLECTIONS
+// THE mapReduceProfileConfig may be required for the exec spawned mapreduce process.
+// Support for the mapreduce testing is copied from (packag_dir)/kadira-rma/ into test/rma/
+
+var clean = mongo.cleanCollections([ 'prodStats', 'rawMethodsMetrics', 'methodsMetrics', 'rawPubMetrics', 'pubMetrics', 'systemMetrics', 'rawSystemMetrics', 'rawErrorMetrics', 'errorMetrics' ]);
 
 suite('usage stats', function () {
   test('one-app-one-record', clean( function (db, done) {
@@ -235,6 +239,12 @@ suite('usage stats', function () {
       });
     }
   }));
+
+  test('close mocha-mongo connection', clean(function(db, done) {
+    db.close();  // Just close the mongodb connection through the mocha-mongo handle.
+    done();
+  }));
+
 });
 
 
@@ -251,10 +261,12 @@ function insertRawMetrics(data, db, collName, callback) {
     data[i].name = data[i].name || 'methodName';
     insertableData.push({value: data[i]});
   }
-  db.collection(collName).insert(insertableData, function (err, result) {
+  db.collection(collName).insertMany(insertableData, function (err, result) {
     callback();
   });
 }
+
+//--------- Helper Functions --------
 
 function runMapReduce(db, callback, profileName, providerName) {
   profileName = profileName || '1min';
@@ -267,12 +279,13 @@ function runMapReduce(db, callback, profileName, providerName) {
     providerName
   );
 
-  exec(command, {cwd: './rma/'}, function (err, stdout, stderr) {
+  exec(command, {cwd: './test/rma/'}, function (err, stdout, stderr) {
     if (err) {
       console.log('-----------------------STDOUT-----------------');
       console.log(stdout);
       console.log('-----------------------STDERR-----------------');
       console.log(stderr);
+      console.log('ERROR to be thrown: ' + err);
       throw err;
     }
     // console.log(stdout, stderr);

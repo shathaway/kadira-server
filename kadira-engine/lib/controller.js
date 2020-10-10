@@ -60,6 +60,9 @@ module.exports = function(app, appDb, metricsCluster) {
   app.use(function(req, res) {
     if (req.method == 'POST') {
 
+//console.log('DIAGNOSTIC controller message body: ' + req.body);
+//console.log(JSON.stringify(req.body, null, 2));
+
       parsers.forEach(function(parserInfo) {
         var parsedData = parserInfo.parser(req.body);
         if(parsedData && parsedData.length > 0) {

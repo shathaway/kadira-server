@@ -1,9 +1,10 @@
 Package.describe({
-  summary: "Jobs API for Kadira UI",
-  name: "local:jobs"
+  'summary': "Jobs API for Kadira UI",
+  'name': "local:jobs",
+  'version': '1.0.0'
 });
 
-Npm.depends({"aws-sdk": "2.0.18"});
+Npm.depends({"aws-sdk": "2.724.0"});
 
 Package.on_use(function (api, where) {
   configurePackage(api);
@@ -21,7 +22,7 @@ Package.on_test(function (api) {
 });
 
 function configurePackage(api) {
-  api.versionsFrom('METEOR@1.0');
+  api.versionsFrom('METEOR@1.6');
   api.use('livedata');
   api.use('mongo-livedata');
   api.use('audit-argument-checks');

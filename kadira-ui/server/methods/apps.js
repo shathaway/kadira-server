@@ -1,3 +1,6 @@
+/*  Meteor.uuid has been removed, replace with import from npm uuid. */
+import {v4 as uuidv4} from 'uuid';
+
 /*eslint-disable new-cap*/
 Meteor.methods({
   "apps.create": function(appName, pricingType) {
@@ -17,7 +20,7 @@ Meteor.methods({
       name: appName,
       created: new Date(),
       owner: this.userId,
-      secret: Meteor.uuid(),
+      secret: uuidv4(),
       plan: plan,
       shard: shard,
       subShard: subShard,
@@ -34,7 +37,7 @@ Meteor.methods({
   },
   "apps.regenerateSecret": function(appId) {
     check(appId, String);
-    var appSecret = Meteor.uuid();
+    var appSecret = uuidv4();
     Apps.update({_id: appId, owner: this.userId}, {$set: {secret: appSecret}});
   },
   "apps.delete": function(appId){

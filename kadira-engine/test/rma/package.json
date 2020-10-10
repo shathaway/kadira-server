@@ -1,0 +1,24 @@
+{
+  "name": "kadira-rma",
+  "version": "1.0.1",
+  "description": "Kadira APM Realtime Metrics Aggregator",
+  "scripts": {
+    "start": "run-p -l run:**",
+    "run:errors-1min": "PROFILE=1min PROVIDER=errors bash start.sh",
+    "run:errors-30min": "PROFILE=30min PROVIDER=errors bash start.sh",
+    "run:errors-3hour": "PROFILE=3hour PROVIDER=errors bash start.sh",
+    "run:methods-1min": "PROFILE=1min PROVIDER=methods bash start.sh",
+    "run:methods-30min": "PROFILE=30min PROVIDER=methods bash start.sh",
+    "run:methods-3hour": "PROFILE=3hour PROVIDER=methods bash start.sh",
+    "run:pubsub-1min": "PROFILE=1min PROVIDER=pubsub bash start.sh",
+    "run:pubsub-30min": "PROFILE=30min PROVIDER=pubsub bash start.sh",
+    "run:pubsub-3hour": "PROFILE=3hour PROVIDER=pubsub bash start.sh",
+    "run:system-1min": "PROFILE=1min PROVIDER=system bash start.sh",
+    "run:system-30min": "PROFILE=30min PROVIDER=system bash start.sh",
+    "run:system-3hour": "PROFILE=3hour PROVIDER=system bash start.sh"
+  },
+  "dependencies": {
+    "npm-run-all": "~4.1.0",
+    "pick-mongo-primary": "file:./packages/pick-mongo-primary"
+  }
+}

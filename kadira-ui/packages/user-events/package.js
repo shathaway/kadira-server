@@ -1,6 +1,7 @@
 Package.describe({
   'summary': 'Track User Events',
-  'name': 'local:user-events'
+  'name': 'local:user-events',
+  'version': '1.0.0'
 });
 
 Package.onTest(function(api) {
@@ -13,7 +14,7 @@ Package.onUse(function(api) {
 });
 
 function configurePackage(api) {
-  api.versionsFrom('METEOR@1.0');
+  api.versionsFrom('METEOR@1.6');
   api.use('raix:eventemitter@0.1.3');
 
   api.addFiles([

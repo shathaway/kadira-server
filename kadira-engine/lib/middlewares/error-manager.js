@@ -1,5 +1,8 @@
+// Note: npm connect is deprecated
+// Note: Mocha test subsystem needs updating if connect v3+ is to be used.
+// var connect = require ('connect');
+
 var assert = require('assert');
-var connect = require ('connect');
 var stateManager = require('../stateManager');
 var engineUtils = require('../utils');
 

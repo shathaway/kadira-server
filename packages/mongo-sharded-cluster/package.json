@@ -1,0 +1,56 @@
+{
+  "_from": "mongo-sharded-cluster@3.x.x",
+  "_id": "mongo-sharded-cluster@3.0.0",
+  "_location": "/mongo-sharded-cluster",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "mongo-sharded-cluster@3.x.x",
+    "name": "mongo-sharded-cluster",
+    "escapedName": "mongo-sharded-cluster",
+    "rawSpec": "3.x.x",
+    "saveSpec": null,
+    "fetchSpec": "3.x.x"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_spec": "mongo-sharded-cluster@3.x.x",
+  "author": {
+    "name": "Arunoda Susiripala",
+    "email": "arunoda.susiripala@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/kadirahq/mongo-sharded-cluster/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "async": "1.5.x",
+    "mongodb": "~3.2.0",
+    "underscore": "1.8.x"
+  },
+  "deprecated": false,
+  "description": "Shard MongoDB in the app layer and build a MongoDB cluster",
+  "devDependencies": {
+    "mocha": "6.x.x",
+    "mocha-mongo": "file:../mocha-mongo"
+  },
+  "homepage": "https://github.com/kadirahq/mongo-sharded-cluster",
+  "keywords": [
+    "mongo",
+    "sharding",
+    "app"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "mongo-sharded-cluster",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadirahq/mongo-sharded-cluster.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "3.0.0"
+}

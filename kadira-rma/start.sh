@@ -1,5 +1,5 @@
 #!/bin/bash
-
+PATH=$PATH:./packages/pick-mongo-primary/bin
 ## USAGE: PROFILE=1min WAIT_TIME=60 start.sh
 
 if [[ -z $WAIT_TIME ]]; then
@@ -34,10 +34,11 @@ dumpEnvVarsTo() {
   MONGO_APP_CONN=$(pick-mongo-primary $MONGO_URL)
   # using this ugly ~~~ to replace spaces which cause some
   # issues with our env vars exposing script
-  export MONGO_APP_CONN=${MONGO_APP_CONN// /"~~~"}
-
+  MONGO_APP_CONN=${MONGO_APP_CONN// /"~~~"}
   # HACK: exposting env vars to the mongo shell
+  export MONGO_APP_CONN
   ENV_DATA=$(env)
+#  ENV_DATA=`env`
   echo "var ENV_DATA='"$ENV_DATA"';" > $1
   cat _envDataProcess.js >> $1
 }

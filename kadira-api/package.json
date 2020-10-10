@@ -26,7 +26,7 @@
     "chai": "3.x.x",
     "eslint": "4.18.x",
     "eslint-plugin-babel": "2.x.x",
-    "mocha": "2.x.x",
+    "mocha": "6.x.x",
     "nodemon": "1.7.x",
     "sinon": "1.x.x"
   },
@@ -53,8 +53,8 @@
     "lodash": "4.x.x",
     "lru-cache": "2.x.x",
     "moment": "2.x.x",
-    "mongo-sharded-cluster": "2.x.x",
-    "mongodb": "2.x.x",
+    "mongo-sharded-cluster": "file:./packages/mongo-sharded-cluster",
+    "mongodb": "3.2.x",
     "node-uuid": "^1.4.7",
     "url-mailer": "0.x.x",
     "ws": "0.8.x"

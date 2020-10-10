@@ -1,3 +1,6 @@
+// Librato support removed - the node.js interface is no longer maintained.
+// Librato has support for RUBY/GEM but requires a librato cloud account
+
 var SOURCE = require('os').hostname();
 var PREFIX = process.env.LIBRATO_PREFIX || "";
 var EventLoopMonitor = require('evloop-monitor');
@@ -8,15 +11,18 @@ module.exports = function() {
   eventLoopMonitor.start();
 
   var apiHits = resetHits();
-  if(process.env.LIBRATO_EMAIL && process.env.LIBRATO_TOKEN) {
-    var client = require('librato-metrics').createClient({
-      email: process.env.LIBRATO_EMAIL,
-      token: process.env.LIBRATO_TOKEN
-    });
-    sendMetrics(client);
-  }
+
+//  if(process.env.LIBRATO_EMAIL && process.env.LIBRATO_TOKEN) {
+//    var client = require('librato-metrics').createClient({
+//      email: process.env.LIBRATO_EMAIL,
+//      token: process.env.LIBRATO_TOKEN
+//    });
+//    sendMetrics(client);
+//  }
+
 
   return function(req, res, next) {
+// MAKE THIS MODULE A NO-OP - calling next()
     next();
     apiHits.total++;
 
@@ -30,36 +36,38 @@ module.exports = function() {
     apiHits.apps[req.body.appId] = true;
   }
 
-  function sendMetrics(client) {
-    var metrics = processMetrics();
-    if(metrics) {
-      var gauges = [];
-      for(var key in metrics) {
-        gauges.push({
-          name: PREFIX + key, 
-          value: metrics[key],
-          source: SOURCE
-        });
-      }
+//  function sendMetrics(client) {
+//    var metrics = processMetrics();
+//    if(metrics) {
+//      var gauges = [];
+//      for(var key in metrics) {
+//        gauges.push({
+//          name: PREFIX + key, 
+//          value: metrics[key],
+//          source: SOURCE
+//        });
+//      }
+//
+//      client.post('/metrics', {gauges: gauges}, afterSent);
+//    } else {
+//      scheduleSend();
+//    }
+//
+//    function afterSent(err) {
+//      if(err) {
+//        console.error('error sending to librato: ', err.message);
+//      }
+//      scheduleSend();
+//    }
+//
+//    function scheduleSend() {
+//      setTimeout(function() {
+//        sendMetrics(client);
+//      }, intervalSendingMetrics);
+//    }
+//  } 
 
-      client.post('/metrics', {gauges: gauges}, afterSent);
-    } else {
-      scheduleSend();
-    }
-
-    function afterSent(err) {
-      if(err) {
-        console.error('error sending to librato: ', err.message);
-      }
-      scheduleSend();
-    }
-
-    function scheduleSend() {
-      setTimeout(function() {
-        sendMetrics(client);
-      }, intervalSendingMetrics);
-    }
-  } 
+// processMetrics(); // serviced by webapp
 
   function processMetrics(){
     //converting metrics into per sec values

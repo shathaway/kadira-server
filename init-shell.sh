@@ -1,42 +1,35 @@
-# DB Environment Settings: init-shell.sh
+# DB Environment Settings
 #
-# This init-shell.sh script is for manual startup of kadira APM applications.
-# It contains common environment variable definitions for kadira APM use.
+# The OSP MongoDB is now a replicated set of two mongod nodes.
 #
-# Connect to the application subdirectory:
-#    <kadira-engine>, <kadira-rma>, or <kadira-ui>
+#   replicaSet = "set-OSP-KADIRA-APM-01"
 #
-# Then execute the command line:
-#    cat ../init-shell.sh run.sh | sh
+#   Primary mongodb   = localhost:27017
+#   Secondary mongodb = localhost:27020
 #
-# Starting kadira services via systemd: systemctl, we configure these environment
-# variables in separate files used by the systemd service control units.
+# Our OSP MongoDB 4.2 server has the following APM databases:
 #
-# The OSP MongoDB is a replicated set of two mongod nodes running on the localhost.
+#  tkadira-app
+#    user = app:password
+#    roles = readWrite, dbAdmin
 #
-#   replicaSet = "set-REPLICA-SET-01"
+#  tkadira-data
+#    user = app:password
+#    roles = readWrite, dbAdmin
+# 
+# Note: other databases (i.e. local) are not user/password protected at this time.
 #
-#   Primary mongodb   = localhost:27017   -- service systemd: systemctl start mongod
-#   Secondary mongodb = localhost:27020   -- service systemd: systemctl start mongod2
-#
-# The MongoDB 3.6 server is supported by the npm mongodb 2.2.x drivers.
-# Our OSP MongoDB 3.6 server has the following APM databases:
-#
-#  tkadira-app  -- the database for user and application registration
-#
-#  tkadira-data -- the database for application metrics collection and aggregation
-#
-# The OPLOG is in the MongoDb changeset stream to keep replica data synchronized
+# The OPLOG is in the local database
 #
 #------------------------------------------------
 # Environment Variables for Kadira Services
 #
-# APP_MONGO_URL         Mongodb 'tkadira-app' database for kadira APM users and apps
+# APP_MONGO_URL         Mongodb 'tkadira-app' database for kadira-ui
 #
-# APP_MONGO_OPLOG_URL   Mongodb operational log for replicaSet synchronization
-#   Note: _OPLOG_ requires a replicaSet and 'local' database.
+# APP_MONGO_OPLOG_URL   Mongodb operational log 'local' database for 
+#   Note: _OPLOG_ support normally requires a replicaSet.
 #
-# DATA_MONGO_URL        Mongodb 'tkadira-data' database for kadira APM metrics
+# DATA_MONGO_URL        Mongodb 'tkadira-data' database for kadira services
 #
 # ENGINE_PORT - is the default 11011 port for the Kadira APM engine
 #
@@ -46,28 +39,29 @@
 # LIBRATO_EMAIL
 # LIBRATO_TOKEN
 
-# The mongodb: URIs shown here use the address of the primary mongod node.
-# You can use multiple host:port entries to find a useable replica node.
-# We have a custom package that can locate the primary replicaset node.
+
+# Meteor App (for) kadira-ui
 
 # Kadira APM application-registration database access with user:password
+# Used by kadira-ui, kadira-rma
 
 export APP_MONGO_URL="mongodb://app:app-password@localhost:27017/tkadira-app"
 
 # Kadira APM aggregation-data database access with user:password
+# Used by kadira-ui, kadira-rma
 
 export DATA_MONGO_URL="mongodb://app:app-password@localhost:27017/tkadira-data"
 
-# Meteor OPLOG - operations log requires a replicaSet. The OPLOG is tailed
-# to provide live/realtime metrics collection.
+# Meteor OPLOG - operations log usually requires a replicaSet / replicated MongoDB
+# Used by kadira-ui
+#
 
-# Provide OPLOG URL access with database user:password authentication.
+# Using OPLOG_URL on system with administrative DB user/password protections
 
-#export APP_MONGO_OPLOG_URL="mongodb://app:app-password@localhost:27017,localhost:27020/local?authSource=tkadira-app&replicaSet=set-REPLICA-SET-01"
+#export APP_MONGO_OPLOG_URL="mongodb://app:app-password@localhost:27017,localhost:27020/local?authSource=tkadira-app&replicaSet=set-OSP-KADIRA-APM-01"
 
-# Provide OPLOG URL without authentication - MongoDb databases without security activated.
-
-export APP_MONGO_OPLOG_URL="mongodb://localhost:27017,localhost:27020/local?replicaSet=set-REPLICA-SET-01"
+# Using OPLOG_URL on (open) system witout DB administrative user/password protections
+export APP_MONGO_OPLOG_URL="mongodb://localhost:27017,localhost:27020/local?replicaSet=set-SORM-RH7-PC-01"
 
 
 export MAIL_URL

@@ -1,6 +1,7 @@
 Package.describe({
-  summary: "Plans Manager for Kadira UI",
-  name: "local:plans-manager"
+  'summary': "Plans Manager for Kadira UI",
+  'name': "local:plans-manager",
+  'version': '1.0.0'
 });
 
 Package.on_use(function(api) {

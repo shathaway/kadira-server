@@ -1,23 +1,41 @@
 {
   "name": "kadira-engine",
+  "version": "2.0.0-beta",
+  "description": "Kadira APM Metrics Collection Engine",
+  "homepage": "https://github.com/kadira-open/kadira-server",
+  "license": "MIT",
   "dependencies": {
-    "mongodb": "2.2.x",
-    "connect": "2.x",
-    "underscore": "1.8.x",
-    "connect-ntp": "0.1.x",
-    "uuid": "3.0.x",
-    "librato-metrics": "0.0.x",
     "async": "2.3.0",
-    "request": "2.81.x",
-    "mongo-sharded-cluster": "2.x.x",
-    "evloop-monitor": "0.1.x"
+    "evloop-monitor": "0.1.x",
+    "mongo-sharded-cluster": "file:../packages/mongo-sharded-cluster",
+    "mongodb": "~3.2.0",
+    "mongodb-uri": "^0.9.7",
+    "promise": "^8.1.0",
+    "request": "2.82.x",
+    "underscore": "1.8.x",
+    "uuid": "3.0.x"
   },
   "devDependencies": {
-    "mocha": "*",
-    "mocha-mongo": "1.0.x"
+    "connect": "3.3.x",
+    "body-parser": "^1.19.0",
+    "mocha": "6.x.x",
+    "mocha-mongo": "file:../packages/mocha-mongo"
   },
   "scripts": {
     "start": "node server.js",
-    "test": "mocha"
-  }
+    "test": "mocha -u tdd -R spec test/middlewares/*js"
+  },
+  "author": "",
+  "contributors": [
+    {
+      "name": "Arunoda Susiripala",
+      "email": "arunoda@kadira.io",
+      "website": "https://github.com/arunoda"
+    },
+    {
+      "name": "Steven J Hathaway",
+      "email": "shathawa@e-z.net",
+      "website": "https://github.com/shathaway"
+    }
+  ]
 }

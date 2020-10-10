@@ -1,0 +1,67 @@
+{
+  "_from": "mocha-mongo@^2.0.0",
+  "_id": "mocha-mongo@2.0.0",
+  "_inBundle": false,
+  "_location": "/mocha-mongo",
+  "_phantomChildren": {
+    "es6-promise": "3.2.1",
+    "readable-stream": "2.2.7",
+    "require_optional": "1.0.1"
+  },
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "mocha-mongo@^2.0.0",
+    "name": "mocha-mongo",
+    "escapedName": "mocha-mongo",
+    "rawSpec": "^2.0.0",
+    "saveSpec": null,
+    "fetchSpec": "^2.0.0"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_spec": "mocha-mongo@^2.0.0",
+  "author": {
+    "name": "Arunoda Susiripala",
+    "email": "arunoda.susiripala@gmail.com"
+  },
+  "contributors": [{
+    "name": "Arunoda Susiripala",
+    "email": "arunoda.susiripala@gmail.com"
+    },{
+    "name": "Steven Hathaway",
+    "email": "shathaw@osp.oregon.gov"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/arunoda/mocha-mongo/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "mongodb": "~3.2.0",
+    "qbox": "0.1.x"
+  },
+  "deprecated": false,
+  "description": "Set of mongodb testing helpers for mocha",
+  "devDependencies": {
+    "mocha": "6.x.x"
+  },
+  "homepage": "https://github.com/arunoda/mocha-mongo#readme",
+  "keywords": [
+    "mocha",
+    "mongo",
+    "test",
+    "helpers"
+  ],
+  "main": "./index.js",
+  "name": "mocha-mongo",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/arunoda/mocha-mongo.git"
+  },
+  "scripts": {
+    "test": "mocha -u tdd -R spec test/mocha-mongo.js"
+  },
+  "version": "2.0.0"
+}

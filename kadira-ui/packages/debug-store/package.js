@@ -1,10 +1,11 @@
 Package.describe({
-  summary: "Client Side Storage for Kadira Debug",
-  name: "local:debug-store"
+  'summary': "Client Side Storage for Kadira Debug",
+  'name': "local:debug-store",
+  'version': '1.0.0'
 });
 
 Npm.depends({
-  "lru-cache": "2.6.4"
+  "lru-cache": "5.1.1"
 });
 
 Package.onUse(function(api) {
@@ -21,13 +22,13 @@ Package.onTest(function(api) {
 });
 
 function configure(api) {
-  api.versionsFrom("1.1.0.2");
+  api.versionsFrom("1.6.0.1");
   api.use("tracker", "client");
   api.use("ejson", "client");
   api.use("minimongo", "client");
   api.use("underscore", "client");
-  api.use("raix:eventemitter@0.1.2", "client");
-  api.use("cosmos:browserify@0.7.0");
+  api.use("raix:eventemitter@0.1.3", "client");
+  api.use("cosmos:browserify@0.10.0");
   api.addFiles("lib/time_store.js", "client");
   api.addFiles("lib/debug_store.js", "client");
   api.addFiles("lib/collection.js", "client");

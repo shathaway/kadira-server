@@ -8,9 +8,11 @@ suite("StateManager", function() {
   suite('.setState', function() {
     test('set initialDataReceived', clean(function(db, done) {
       var appsCollection = db.collection('apps');
-      appsCollection.insert({_id: 'appOne'}, function(err, apps) {
+
+      appsCollection.insertOne({_id: 'appOne'}, function(err, apps) {
         assert.ifError(err);
-        stateManager.setState(db, apps[0], 'initialDataReceived', checkForinitialDataReceived);
+        // NOTE: apps[0] is undefined - insertOne returns the information in apps.ops
+        stateManager.setState(db, apps.ops[0], 'initialDataReceived', checkForinitialDataReceived);
       });
 
       function checkForinitialDataReceived(err) {
@@ -37,5 +39,19 @@ suite("StateManager", function() {
       var app = {_id: "appOne", initialDataReceived: true};
       stateManager.setState(db, app, 'initialDataReceived', done);
     });
+
+    test('close mocha-mongo connection', clean(function(db, done) {
+//    Just close the mongodb connection through the mocha-mongo handle.
+      db.close();
+      done();
+    }));
+
   });
 });
+
+function analyzeObject(obj){
+  for (var tag in obj){
+    console.log('object tag = ' + tag + ', typeof = ' + typeof obj[tag]);
+  }
+}
+

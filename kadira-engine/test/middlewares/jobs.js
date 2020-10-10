@@ -9,8 +9,7 @@ suite('middlewares/jobs', function() {
   suite('actions', function() {
     test('get job', clean(function(db, done) {
       var job = {_id: 'the-id', data: {aa: 10}, appId: 'app-id'};
-
-      db.collection('jobs').insert(job, function(err) {
+      db.collection('jobs').insertOne(job, function(err) {
         assert.ifError(err);
         var actions = middleware._getActions(db);
         actions.get(job.appId, {id: job._id}, verifyResponse);
@@ -26,7 +25,7 @@ suite('middlewares/jobs', function() {
     test('get job with no id', clean(function(db, done) {
       var job = {_id: 'the-id', data: {aa: 10}, appId: 'app-id'};
 
-      db.collection('jobs').insert(job, function(err) {
+      db.collection('jobs').insertOne(job, function(err) {
         assert.ifError(err);
         var actions = middleware._getActions(db);
         actions.get(job.appId, {}, verifyResponse);
@@ -43,7 +42,7 @@ suite('middlewares/jobs', function() {
       var updateJob = {state: 'new-state', data: {bb: 20}};
       var result = {_id: 'the-id', state: 'new-state', data: {aa: 10, bb: 20}, appId: job.appId};
 
-      db.collection('jobs').insert(job, function(err) {
+      db.collection('jobs').insertOne(job, function(err) {
         assert.ifError(err);
         var actions = middleware._getActions(db);
         actions.set(job.appId, _.extend({id: job._id}, updateJob), afterSet);
@@ -69,7 +68,7 @@ suite('middlewares/jobs', function() {
       var updateJob = {state: 'new-state', data: {bb: 20}};
       var result = {_id: 'the-id', state: 'new-state', data: {aa: 10, bb: 20}};
 
-      db.collection('jobs').insert(job, function(err) {
+      db.collection('jobs').insertOne(job, function(err) {
         assert.ifError(err);
         var actions = middleware._getActions(db);
         actions.set(job.appId, {}, afterSet);
@@ -105,7 +104,7 @@ suite('middlewares/jobs', function() {
         end: function() {}
       };
 
-      db.collection('jobs').insert(job, function(err) {
+      db.collection('jobs').insertOne(job, function(err) {
         assert.ifError(err);
         m(req, res);
       });
@@ -130,7 +129,7 @@ suite('middlewares/jobs', function() {
         end: function() {}
       };
 
-      db.collection('jobs').insert(job, function(err) {
+      db.collection('jobs').insertOne(job, function(err) {
         assert.ifError(err);
         m(req, res);
       });
@@ -155,7 +154,7 @@ suite('middlewares/jobs', function() {
         end: function() {}
       };
 
-      db.collection('jobs').insert(job, function(err) {
+      db.collection('jobs').insertOne(job, function(err) {
         assert.ifError(err);
         m(req, res);
       });
@@ -182,7 +181,7 @@ suite('middlewares/jobs', function() {
         end: function() {}
       };
 
-      db.collection('jobs').insert(job, function(err) {
+      db.collection('jobs').insertOne(job, function(err) {
         assert.ifError(err);
         m(req, res);
       });
@@ -202,7 +201,7 @@ suite('middlewares/jobs', function() {
         end: function() {}
       };
 
-      db.collection('jobs').insert(job, function(err) {
+      db.collection('jobs').insertOne(job, function(err) {
         assert.ifError(err);
         m(req, res);
       });

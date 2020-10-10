@@ -46,7 +46,7 @@ suite('middlewares/authenticate', function() {
       body: {}
     };
 
-    db.collection('apps').insert({_id: appId, secret: appSecret}, function(err) {
+    db.collection('apps').insertOne({_id: appId, secret: appSecret}, function(err) {
       if(err) throw err;
       authenticateMiddleware(db)(req, null, next);
     });
@@ -71,7 +71,7 @@ suite('middlewares/authenticate', function() {
       body: {}
     };
 
-    db.collection('apps').insert({_id: appId, secret: appSecret, plan: 'my-plan'}, function(err) {
+    db.collection('apps').insertOne({_id: appId, secret: appSecret, plan: 'my-plan'}, function(err) {
       if(err) throw err;
       authenticateMiddleware(db)(req, null, next);
     });

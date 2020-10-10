@@ -1,0 +1,15 @@
+db.mapReduceProfileConfig.insertMany([
+{ "_id" : { "profile" : "1min", "provider" : "methods", "shard" : "one" }, "lastTime" : new Date() },
+{ "_id" : { "profile" : "1min", "provider" : "errors", "shard" : "one" }, "lastTime" : new Date() },
+{ "_id" : { "profile" : "1min", "provider" : "pubsub", "shard" : "one" }, "lastTime" : new Date() },
+{ "_id" : { "profile" : "1min", "provider" : "system", "shard" : "one" }, "lastTime" : new Date() },
+{ "_id" : { "profile" : "3hour", "provider" : "methods", "shard" : "one" }, "lastTime" : new Date() },
+{ "_id" : { "profile" : "3hour", "provider" : "errors", "shard" : "one" }, "lastTime" : new Date() },
+{ "_id" : { "profile" : "3hour", "provider" : "pubsub", "shard" : "one" }, "lastTime" : new Date() },
+{ "_id" : { "profile" : "3hour", "provider" : "system", "shard" : "one" }, "lastTime" : new Date() },
+{ "_id" : { "profile" : "30min", "provider" : "methods", "shard" : "one" }, "lastTime" : new Date() },
+{ "_id" : { "profile" : "30min", "provider" : "errors", "shard" : "one" }, "lastTime" : new Date() },
+{ "_id" : { "profile" : "30min", "provider" : "pubsub", "shard" : "one" }, "lastTime" : new Date() },
+{ "_id" : { "profile" : "30min", "provider" : "system", "shard" : "one" }, "lastTime" : new Date() }
+])
+

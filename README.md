@@ -1,23 +1,28 @@
 # Kadira APM
+
 Meteor Development Group has bought Kadira APM from Arunoda. We have made the original Kadira code available under the MIT License in this GitHub repository.
 
 As the code we're running in Galaxy has diverged, we will not be running this repository as an open source project. We've started a conversation with potential maintainers of a community fork.
 
 Arunoda uses the name Kadira for other projects and still owns the trademark on the "Kadira" name. Arunoda requests that public forks should choose a new name.
 
-## Development 1.0.0 Fork: shathaway/kadira-server
+The Meteor Development Group along with Arunoda, has archived the code at [kadira-open/kadira-server](https://github.com/kadira-open/kadira-server).
 
-This is a fork of *kadira-open/kadira-server* to make the Kadira APM usable on a single localhost.
-The NGINX software is used as a web application proxy server on the localhost.
+## Branches
 
-It is serviced by MongoDb v3.6 and Meteor v1.4.3.2. The code and configurations have been minimally
-upgraded to make the integration operational.
+- A significant branch is [lampewebdev/kadira-server](https://github.com/lampewebdev/kadira-server). It contains some limited package version updates for minimal operation capability.
 
-## Disclaimer
+- Oregon State Police is working with the ''kadira-open'' code base for use on a stand-alone localhost system. The updates are not yet publicly committed.
+
+
+# kadira-open/kadira-server
 
 This is a set of components you need to run Kadira in your system.
 
 > The following instructions are not production deployment configurations. It's meant for running for testing.
+
+
+
 
 ## Initial Setup
 
@@ -39,3 +44,12 @@ export KADIRA_OPTIONS_ENDPOINT=http://localhost:11011
 ```
 
 > Here's we've assumed http://localhost:11011 as the kadira-engine URL.
+
+This is the endpoint you enter into your Meteor project when instrumenting with either:
+
+
+- meteorhacks:kadira
+
+- mdg:meteor-apm-agent.
+
+

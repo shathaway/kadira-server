@@ -1,0 +1,151 @@
+mongo-sharded-cluster@2.1.0 /home/shathaw/kadira-open/kadira-server-master/kadira-engine/packages/mongo-sharded-cluster
+├── async@1.5.2
+├─┬ mocha@6.2.3
+│ ├── ansi-colors@3.2.3
+│ ├── browser-stdout@1.3.1
+│ ├─┬ debug@3.2.6
+│ │ └── ms@2.1.1 deduped
+│ ├── diff@3.5.0
+│ ├── escape-string-regexp@1.0.5
+│ ├─┬ find-up@3.0.0
+│ │ └─┬ locate-path@3.0.0
+│ │   ├─┬ p-locate@3.0.0
+│ │   │ └─┬ p-limit@2.3.0
+│ │   │   └── p-try@2.2.0
+│ │   └── path-exists@3.0.0
+│ ├─┬ glob@7.1.3
+│ │ ├── fs.realpath@1.0.0
+│ │ ├─┬ inflight@1.0.6
+│ │ │ ├── once@1.4.0 deduped
+│ │ │ └── wrappy@1.0.2
+│ │ ├── inherits@2.0.4
+│ │ ├── minimatch@3.0.4 deduped
+│ │ ├─┬ once@1.4.0
+│ │ │ └── wrappy@1.0.2 deduped
+│ │ └── path-is-absolute@1.0.1
+│ ├── growl@1.10.5
+│ ├── he@1.2.0
+│ ├─┬ js-yaml@3.13.1
+│ │ ├─┬ argparse@1.0.10
+│ │ │ └── sprintf-js@1.0.3
+│ │ └── esprima@4.0.1
+│ ├─┬ log-symbols@2.2.0
+│ │ └─┬ chalk@2.4.2
+│ │   ├─┬ ansi-styles@3.2.1
+│ │   │ └─┬ color-convert@1.9.3
+│ │   │   └── color-name@1.1.3
+│ │   ├── escape-string-regexp@1.0.5 deduped
+│ │   └─┬ supports-color@5.5.0
+│ │     └── has-flag@3.0.0 deduped
+│ ├─┬ minimatch@3.0.4
+│ │ └─┬ brace-expansion@1.1.11
+│ │   ├── balanced-match@1.0.0
+│ │   └── concat-map@0.0.1
+│ ├─┬ mkdirp@0.5.4
+│ │ └── minimist@1.2.5
+│ ├── ms@2.1.1
+│ ├─┬ node-environment-flags@1.0.5
+│ │ ├─┬ object.getownpropertydescriptors@2.1.0
+│ │ │ ├── define-properties@1.1.3 deduped
+│ │ │ └─┬ es-abstract@1.17.6
+│ │ │   ├─┬ es-to-primitive@1.2.1
+│ │ │   │ ├── is-callable@1.2.0 deduped
+│ │ │   │ ├── is-date-object@1.0.2
+│ │ │   │ └─┬ is-symbol@1.0.3
+│ │ │   │   └── has-symbols@1.0.1 deduped
+│ │ │   ├── function-bind@1.1.1 deduped
+│ │ │   ├─┬ has@1.0.3
+│ │ │   │ └── function-bind@1.1.1 deduped
+│ │ │   ├── has-symbols@1.0.1 deduped
+│ │ │   ├── is-callable@1.2.0
+│ │ │   ├─┬ is-regex@1.1.1
+│ │ │   │ └── has-symbols@1.0.1 deduped
+│ │ │   ├── object-inspect@1.8.0
+│ │ │   ├── object-keys@1.1.1 deduped
+│ │ │   ├── object.assign@4.1.0 deduped
+│ │ │   ├─┬ string.prototype.trimend@1.0.1
+│ │ │   │ ├── define-properties@1.1.3 deduped
+│ │ │   │ └── es-abstract@1.17.6 deduped
+│ │ │   └─┬ string.prototype.trimstart@1.0.1
+│ │ │     ├── define-properties@1.1.3 deduped
+│ │ │     └── es-abstract@1.17.6 deduped
+│ │ └── semver@5.7.1
+│ ├─┬ object.assign@4.1.0
+│ │ ├─┬ define-properties@1.1.3
+│ │ │ └── object-keys@1.1.1 deduped
+│ │ ├── function-bind@1.1.1
+│ │ ├── has-symbols@1.0.1
+│ │ └── object-keys@1.1.1
+│ ├── strip-json-comments@2.0.1
+│ ├─┬ supports-color@6.0.0
+│ │ └── has-flag@3.0.0
+│ ├─┬ which@1.3.1
+│ │ └── isexe@2.0.0
+│ ├─┬ wide-align@1.1.3
+│ │ └─┬ string-width@2.1.1
+│ │   ├── is-fullwidth-code-point@2.0.0
+│ │   └─┬ strip-ansi@4.0.0
+│ │     └── ansi-regex@3.0.0
+│ ├─┬ yargs@13.3.2
+│ │ ├─┬ cliui@5.0.0
+│ │ │ ├─┬ string-width@3.1.0
+│ │ │ │ ├── emoji-regex@7.0.3 deduped
+│ │ │ │ ├── is-fullwidth-code-point@2.0.0 deduped
+│ │ │ │ └── strip-ansi@5.2.0 deduped
+│ │ │ ├─┬ strip-ansi@5.2.0
+│ │ │ │ └── ansi-regex@4.1.0
+│ │ │ └─┬ wrap-ansi@5.1.0
+│ │ │   ├── ansi-styles@3.2.1 deduped
+│ │ │   ├─┬ string-width@3.1.0
+│ │ │   │ ├── emoji-regex@7.0.3 deduped
+│ │ │   │ ├── is-fullwidth-code-point@2.0.0 deduped
+│ │ │   │ └── strip-ansi@5.2.0 deduped
+│ │ │   └─┬ strip-ansi@5.2.0
+│ │ │     └── ansi-regex@4.1.0
+│ │ ├── find-up@3.0.0 deduped
+│ │ ├── get-caller-file@2.0.5
+│ │ ├── require-directory@2.1.1
+│ │ ├── require-main-filename@2.0.0
+│ │ ├── set-blocking@2.0.0
+│ │ ├─┬ string-width@3.1.0
+│ │ │ ├── emoji-regex@7.0.3
+│ │ │ ├── is-fullwidth-code-point@2.0.0 deduped
+│ │ │ └─┬ strip-ansi@5.2.0
+│ │ │   └── ansi-regex@4.1.0
+│ │ ├── which-module@2.0.0
+│ │ ├── y18n@4.0.0
+│ │ └── yargs-parser@13.1.2 deduped
+│ ├─┬ yargs-parser@13.1.2
+│ │ ├── camelcase@5.3.1
+│ │ └── decamelize@1.2.0
+│ └─┬ yargs-unparser@1.6.0
+│   ├─┬ flat@4.1.0
+│   │ └── is-buffer@2.0.4
+│   ├── lodash@4.17.20
+│   └── yargs@13.3.2 deduped
+├─┬ mocha-mongo@2.0.0 -> /home/shathaw/kadira-open/kadira-server-master/kadira-engine/packages/mocha-mongo
+│ ├─┬ mongodb@3.2.7
+│ │ ├─┬ mongodb-core@3.2.7
+│ │ │ ├── bson@1.1.5
+│ │ │ ├─┬ require_optional@1.0.1
+│ │ │ │ ├── resolve-from@2.0.0
+│ │ │ │ └── semver@5.7.1
+│ │ │ ├── safe-buffer@5.2.1 deduped
+│ │ │ └─┬ saslprep@1.0.3
+│ │ │   └─┬ sparse-bitfield@3.0.3
+│ │ │     └── memory-pager@1.5.0
+│ │ └── safe-buffer@5.2.1
+│ └── qbox@0.1.7
+├─┬ mongodb@3.2.7
+│ ├─┬ mongodb-core@3.2.7
+│ │ ├── bson@1.1.5
+│ │ ├─┬ require_optional@1.0.1
+│ │ │ ├── resolve-from@2.0.0
+│ │ │ └── semver@5.7.1 deduped
+│ │ ├── safe-buffer@5.2.1 deduped
+│ │ └─┬ saslprep@1.0.3
+│ │   └─┬ sparse-bitfield@3.0.3
+│ │     └── memory-pager@1.5.0
+│ └── safe-buffer@5.2.1
+└── underscore@1.8.3
+

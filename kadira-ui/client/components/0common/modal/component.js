@@ -1,5 +1,8 @@
+/*  Meteor.uuid has been removed, replace with import from npm uuid. */
+import {v4 as uuidv4} from 'uuid';
+
 var component = FlowComponents.define("modal", function(props) {
-  this.modalId = props.id || Meteor.uuid();
+  this.modalId = props.id || uuidv4();
 
   this.set("modalId", this.modalId);
   this.modalClass = props.modalClass || "";

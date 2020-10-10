@@ -1,10 +1,11 @@
 Package.describe({
   'summary': 'Fetch data from our Kadira Fetchman',
-  'name': 'local:kadira-data'
+  'name': 'local:kadira-data',
+  'version': '1.0.0'
 });
 
 Npm.depends({
-  "lru-cache": "2.6.4",
+  "lru-cache": "4.1.0",
   "mongo-sharded-cluster": "2.0.0"
 });
 
@@ -35,7 +36,7 @@ Package.onUse(function(api) {
 });
 
 function configurePackage(api) {
-  api.versionsFrom('METEOR@1.0');
+  api.versionsFrom('METEOR@1.6');
   api.use('mongo');
   api.use('accounts-base');
   api.use('underscore');
@@ -44,8 +45,8 @@ function configurePackage(api) {
   api.use('tracker', 'client');
   api.use('ddp');
   api.use('ejson');
-  api.use('meteorhacks:unblock@1.1.0');
-  api.use('cosmos:browserify@0.7.0');
+  api.use('lamhieu:unblock');
+  api.use('cosmos:browserify@0.10.0');
   api.use('local:plans-manager');
   api.use('local:permissions-manager');
   api.use('anti:i18n');
