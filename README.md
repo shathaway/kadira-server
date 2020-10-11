@@ -12,7 +12,11 @@ The Meteor Development Group along with Arunoda, has archived the code at [kadir
 
 - A significant branch is [lampewebdev/kadira-server](https://github.com/lampewebdev/kadira-server). It contains some limited package version updates for minimal operation capability.
 
-- Oregon State Police is working with the ''kadira-open'' code base for use on a stand-alone localhost system. The updates are not yet publicly committed.
+- Oregon State Police is working with the ''kadira-open'' code base for use on a stand-alone localhost system [shathaway/kadira-server](https://github.com/shathaway/kadira-server).
+
+- NodeChef provides an APM service for Meteor.
+
+- MontiAPM provides an APM service for Meteor.
 
 
 # kadira-open/kadira-server
