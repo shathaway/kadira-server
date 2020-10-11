@@ -10,13 +10,13 @@ The Meteor Development Group along with Arunoda, has archived the code at [kadir
 
 ## Branches
 
-- A significant branch is [lampewebdev/kadira-server](https://github.com/lampewebdev/kadira-server). It contains some limited package version updates for minimal operation capability.
+- A significant branch is [lampewebdev/kadira-server](https://github.com/lampewebdev/kadira-server). It contains some limited package version updates for minimal operation capability. Michael Lazarski has a 3-part tutorial on how to install the kadira-server.
 
 - Oregon State Police is working with the ''kadira-open'' code base for use on a stand-alone localhost system [shathaway/kadira-server](https://github.com/shathaway/kadira-server).
 
-- NodeChef provides an APM service for Meteor.
+- [NodeChef](https://www.nodechef.com) provides an APM service for Meteor.
 
-- MontiAPM provides an APM service for Meteor.
+- [MontiAPM](https://montiapm.com) provides an APM service for Meteor.
 
 
 # kadira-open/kadira-server
